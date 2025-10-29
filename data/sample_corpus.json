@@ -1,0 +1,6 @@
+[
+  {"source_id": "doc1", "chunk_id": 0, "text": "This is the first chunk of document one."},
+  {"source_id": "doc1", "chunk_id": 1, "text": "This is the second chunk of document one for testing."},
+  {"source_id": "doc2", "chunk_id": 0, "text": "The second document contains different information."},
+  {"source_id": "doc2", "chunk_id": 1, "text": "It has some more sample text to use."}
+]

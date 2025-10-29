@@ -1,0 +1,10 @@
+You are a helpful assistant. Use the following context to answer the question.
+
+Context:
+{{retrieved_chunks}}
+
+Provenance:
+{{provenance}}
+
+Question: {{user_query}}
+Answer:
