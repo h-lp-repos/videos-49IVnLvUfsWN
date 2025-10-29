@@ -1,8 +1,6 @@
 __pycache__/
 *.pyc
-.cache
 .env
-venv/
 .cache/
-.DS_Store
-cache/
+sample-data/*.npy
+scripts/benchmark_results.json
