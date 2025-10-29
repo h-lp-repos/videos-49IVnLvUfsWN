@@ -1,8 +1,0 @@
-[
-  {"source_id": "doc1.md", "chunk_id": 0, "text": "Introduction to rotating keys and basic cryptography patterns.", "meta": {"created": "2025-01-01"}},
-  {"source_id": "doc1.md", "chunk_id": 1, "text": "Applying rotations in production: best practices and safety checks.", "meta": {"created": "2025-01-02"}},
-  {"source_id": "doc2.md", "chunk_id": 0, "text": "Key rotation examples with OpenSSL and sample commands.", "meta": {"created": "2025-01-03"}},
-  {"source_id": "doc3.md", "chunk_id": 0, "text": "Troubleshooting common errors during key rotation and migration.", "meta": {"created": "2025-01-04"}},
-  {"source_id": "doc4.md", "chunk_id": 0, "text": "Security implications of frequent rotations and automated tooling.", "meta": {"created": "2025-01-05"}},
-  {"source_id": "doc5.md", "chunk_id": 0, "text": "Migration checklist and rollback strategies for key rotation procedures.", "meta": {"created": "2025-01-06"}}
-]

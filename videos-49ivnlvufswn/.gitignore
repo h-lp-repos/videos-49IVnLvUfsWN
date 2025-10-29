@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-.env
-.cache/
-sample-data/*.npy
-scripts/benchmark_results.json

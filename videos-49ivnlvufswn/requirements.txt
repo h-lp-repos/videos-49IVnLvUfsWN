@@ -1,4 +1,0 @@
-numpy
-# Optional helpers used if available
-# tiktoken
-# sentence-transformers
