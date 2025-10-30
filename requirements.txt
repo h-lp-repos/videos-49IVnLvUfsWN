@@ -1,6 +1,0 @@
-faiss-cpu
-sentence-transformers
-tiktoken
-numpy
-openai
-tqdm
