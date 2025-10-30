@@ -1,46 +1,20 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-.Python
-env/
-.venv/
+*.egg-info/
+*.env
 venv/
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-to?doo*.txt
-
-# Unit test / coverage reports
-htmlcov/
-.coverage
-.coverage.*
-.cache
-.noseids
-
-# Jupyter Notebook checkpoints
+# Jupyter
 .ipynb_checkpoints/
 
-# FAISS index files
-*.faiss
-
-# Data files cache
-.cache/
-
-# LLM sandbox stub logs
-logs/
-
-# OS files
+# Sistema
 .DS_Store
-Thumbs.db
+*.log
+
+# FAISS index y datos temporales generados
+*.index
+*.jsonl
+
+# Otros
+tmp/

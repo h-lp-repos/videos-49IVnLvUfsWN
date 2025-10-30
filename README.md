@@ -1,50 +1,28 @@
-# Lesson 3: Implementing RAG (Retrieval-Augmented Generation)
+# Lesson 3: Implementing RAG (Retrieval-Augmented Generation) - Videos
 
-This repository contains all the starter code, data, and scripts for Lesson 3 videos on Implementing RAG. You will find separate folders with instructions for each of the practical demonstration videos.
+Este repositorio contiene el material completo y detallado para la grabación de los seis videos prácticos de la Clase 03: Implementación de RAG.
 
-## Structure
+## Estructura
 
-- `video-1/` – Environment & Starter Repo Quickstart: Setup, deps and sample index
-- `video-2/` – Connect to Vector Index & Retrieve Top-K Chunks with Provenance
-- `video-3/` – Prompt Construction & Token-Budget Enforcement (tiktoken demo)
-- `video-4/` – Implement Relevance Reranker & Thresholding (rerank + filter)
-- `video-5/` – Caching, Deduplication & Simple Retrieval Optimization
-- `video-6/` – End-to-End Demo: Run 5 Sample Queries, Micro-benchmark & Failure Modes
+Cada video está en su propia carpeta, numerada y con nombre en kebab-case:
 
-## Setup
+- `video-1-environment-starter-quickstart/`: Configuración inicial del entorno y repositorio starter.
+- `video-2-connect-vector-index/`: Conexión al índice de vectores y recuperación de chunks.
+- `video-3-prompt-construction-token-budget/`: Construcción de prompts y control de presupuesto de tokens.
+- `video-4-implement-reranker-thresholding/`: Implementación del reranker de relevancia y filtrado.
+- `video-5-caching-dedup-retrieval-optimization/`: Caching, deduplicación y optimizaciones de recuperación.
+- `video-6-end-to-end-demo-benchmark-failure-modes/`: Demo de extremo a extremo, micro-benchmarking y modos de falla.
 
-1. Clone this repository:
-   ```bash
-   git clone <repo-url>
-   cd videos-49IVnLvUfsWN
-   ```
-2. Create a virtual environment and activate it:
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-4. Ensure you have Python >=3.8 and required API keys or set sandbox mode:
-   ```bash
-   export RAG_LLM_MODE=sandbox
-   ```
+## Archivos principales
 
-## Data & Index
+- `README.md`: Este archivo de descripción general.
+- `.gitignore`: Archivos y carpetas a ignorar.
 
-- Sample corpus, queries, and index files are under `data/`.
-- To (re)generate the FAISS index and metadata, run:
-  ```bash
-  python scripts/load_sample_index.py
-  ```
+## Flujo sugerido de commits
 
-## Scripts & Modules
+1. Commit inicial con la estructura base y archivos raíz.
+2. Commit por cada video con su contenido completo (README, scripts, datos, guión, checklist, notas, artifacts y assets).
 
-- Scripts to run each demo are in `scripts/`.
-- Core modules are at the repo root (`embeddings.py`, `retrieval.py`, etc.).
-- Templates are in `templates/`.
+---
 
-Each `video-*` folder contains a `README.md` with step-by-step instructions for that demo.
+*Repositorio generado automáticamente siguiendo las especificaciones de la Clase 03.*
