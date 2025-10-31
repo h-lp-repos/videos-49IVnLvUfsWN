@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Consulta con caching y deduplicación.
+Execute a retrieval query with caching and deduplication.
 """
 import argparse, hashlib
 from utils.cache import Cache
@@ -25,10 +25,10 @@ def dedupe(chunks):
     return unique
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Consulta cacheada con dedupe')
-    parser.add_argument('--query', required=True)
-    parser.add_argument('--k', type=int, default=5)
-    parser.add_argument('--weights', default='0.8,0.2', help='Pesos para invalidar cache')
+    parser = argparse.ArgumentParser(description='Cached query with deduplication')
+    parser.add_argument('--query', required=True, help='Query text')
+    parser.add_argument('--k', type=int, default=5, help='Number of chunks to retrieve')
+    parser.add_argument('--weights', default='0.8,0.2', help='Weights to invalidate cache')
     args = parser.parse_args()
     key = fingerprint(args.query, args.k, args.weights)
     result = CACHE.get(key)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         data = chunks
     else:
         data = result
-    # dedupe
+    # Deduplicate duplicate chunks
     data = dedupe(data)
     for c in data:
         print(c)

@@ -1,5 +1,5 @@
 """
-Capa de cache simple basada en archivo JSON y TTL.
+Simple file-based TTL cache layer using JSON storage.
 """
 import os, json, time
 
@@ -24,4 +24,3 @@ class Cache:
         self.store[key] = {'ts': time.time(), 'value': value}
         with open(self.path, 'w') as f:
             json.dump(self.store, f)
-

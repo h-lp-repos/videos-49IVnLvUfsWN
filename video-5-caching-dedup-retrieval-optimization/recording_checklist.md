@@ -1,5 +1,5 @@
-# Checklist de Grabación Video 5
+# Recording Checklist - Video 5
 
-- [ ] Mostrar mensajes "cache miss" y "cache hit"
-- [ ] Mensaje "Removed N duplicate chunks" tras dedupe
-- [ ] Invalidación de cache cuando cambian weights
+- [ ] "cache miss" and "cache hit" messages shown
+- [ ] "Removed N duplicate chunks" message displayed after dedupe
+- [ ] Cache invalidation triggered when weights change

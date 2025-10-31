@@ -1,44 +1,45 @@
-# Video 5: Caching, Deduplicación y Optimización de Recuperación
+# Video 5: Caching, Deduplication & Simple Retrieval Optimization
 
-**Duración estimada:** 12 min
+**Estimated Duration:** 12 min
 
-**Objetivo:**
-Implementar una capa de caching para resultados de recuperación, demostrar hits/misses, y aplicar deduplicación de chunks.
+**Objective:**
+Implement a simple caching layer for retrieval results, demonstrate cache hits and misses, and implement duplicate chunk suppression using hash-based deduplication.
 
-## Requisitos previos
+## Prerequisites
 
-- Videos 1–4 completados
-- Dependencias instaladas (`numpy`, `pandas`)
+- Videos 1–4 completed
+- Dependencies installed (`numpy`, `pandas`)
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Revisar `utils/cache.py` y entender formato de key (query fingerprint + k).
-2. Ejecutar primer query y observar cache miss:
+1. Review `utils/cache.py` and understand the cache key format (query fingerprint + k).
+2. Run the first query and observe a cache miss:
    ```bash
    python scripts/cached_query.py --query "X" --k 5
    ```
-3. Ejecutar de nuevo y observar cache hit:
+3. Run the same query again and observe a cache hit:
    ```bash
    python scripts/cached_query.py --query "X" --k 5
    ```
-4. Forzar deduplicación con textos duplicados:
+4. Force deduplication using duplicate texts:
    ```bash
    python scripts/cached_query.py --query "dup" --k 5
    ```
-5. Mostrar invalidación de cache al cambiar weights:
+5. Demonstrate cache invalidation when weights change:
    ```bash
    python scripts/cached_query.py --query "X" --k 5 --weights 0.7,0.3
    ```
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md`.
+- Cache grows unbounded: configure TTL and eviction policy.
+- Deduplication misses near-duplicates: normalize text (strip, lower-case).
+- Stale cache entries after index update: include index version in cache key.
 
-## Materiales incluidos
+## Materials
 
-- `utils/cache.py`: Lógica de cache TTL file-based.
-- `scripts/`: Script de consulta cacheada y módulo dummy de retrieve.
-- `notebooks/`: Notebook de demostración.
-- `verification_artifacts/`: Salida esperada.
-- `assets/`: Capturas y gráficos de latencia.
-
+- `utils/cache.py`: file-based TTL cache logic
+- `scripts/`: cached_query script and dummy retrieve module
+- `notebooks/`: demo notebook
+- `assets/`: latency charts and dedupe flow diagrams
+- `verification_artifacts/`: expected CLI output

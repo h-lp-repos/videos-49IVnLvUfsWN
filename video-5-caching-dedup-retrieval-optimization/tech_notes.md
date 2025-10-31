@@ -1,8 +1,7 @@
-# Notas Técnicas y Troubleshooting Video 5
+# Technical Notes & Troubleshooting - Video 5
 
-## Errores comunes
+## Common Errors
 
-- **Cache crece sin control**: Configurar TTL y política de purga.
-- **Dedup falla en near-duplicates**: Normalizar texto (strip, lower).
-- **Datos desactualizados**: Incluir versión de índice en fingerprint.
-
+- Cache growing unbounded: configure TTL and prune policy.
+- Deduplication failing on near-duplicates: normalize text before hashing.
+- Stale data returned: include index version in cache fingerprint.
