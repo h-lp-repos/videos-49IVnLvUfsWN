@@ -1,36 +1,37 @@
-# Video 6: Demo End-to-End, Micro-benchmark y Modos de Falla
+# Video 6: End-to-End Demo, Micro-benchmark & Failure Modes
 
-**Duración estimada:** 15 min
+**Estimated Duration:** 15 min
 
-**Objetivo:**
-Ejecutar el pipeline completo de RAG para 5 consultas de ejemplo, mostrar micro-benchmarks (p50/p95) y reproducir modos de falla con sus mitigaciones.
+**Objective:**
+Run the full RAG pipeline for 5 sample queries, capture micro-benchmark results (p50/p95 latencies), and reproduce failure modes with mitigation strategies.
 
-## Requisitos previos
+## Prerequisites
 
-- Videos 1–5 completados
-- Dependencias instaladas (`numpy`, `pandas`)
+- Videos 1–5 completed
+- Dependencies installed (`numpy`, `pandas`)
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Ejecutar benchmark:
+1. Run the benchmark:
    ```bash
    python scripts/benchmark.py --queries sample_queries.json --runs 5
    ```
-2. Observar logs step-level y resumen p50/p95.
-3. Reproducir modo de falla de contexto (prompt muy grande) y aplicar truncado.
-4. Reproducir duplicación/hallucination y aplicar dedupe + grounding.
-5. Verificar que `benchmark_results.json` se haya generado.
+2. Observe step-level logs and the p50/p95 summary.
+3. Reproduce a context-window failure (oversized prompt) and apply truncation mitigation.
+4. Reproduce duplication/hallucination failure and apply dedupe + grounding mitigation.
+5. Verify that `benchmark_results.json` was generated.
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md`.
+- LLM call timeouts: adjust timeout settings or use the stub.
+- p95 skewed by cold start: run a warm-up query before measuring.
+- `benchmark_results.json` not created: check write permissions.
 
-## Materiales incluidos
+## Materials
 
-- `scripts/benchmark.py`: Runner de benchmark end-to-end.
-- `sample_queries.json`: Consultas de ejemplo.
-- `templates/`: Plantilla de prompt usada.
-- `notebooks/`: Notebook de análisis de benchmarks.
-- `verification_artifacts/`: Resultados ejemplo.
-- `assets/`: Gráficos de latencias y fallas.
-
+- `scripts/benchmark.py`
+- `sample_queries.json`
+- `templates/`: prompt template
+- `notebooks/`: benchmark analysis notebook
+- `verification_artifacts/benchmark_results.json`
+- `assets/`: latency and failure-mode graphics

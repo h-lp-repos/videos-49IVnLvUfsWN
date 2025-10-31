@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
-Micro-benchmark end-to-end pipeline RAG y modos de falla.
+Micro-benchmark the end-to-end RAG pipeline and reproduce failure modes.
 """
 import argparse, json, time, numpy as np
 
 def retrieve(query, k):
-    # simulación rápida
-    return [{'source_id': f'doc{i}', 'chunk_id': i, 'score': 1.0/(i+1), 'text': 'Sample chunk'} for i in range(k)]
+    # quick simulation of retrieval
+    return [
+        {'source_id': f'doc{i}', 'chunk_id': i, 'score': 1.0/(i+1), 'text': 'Sample chunk'}
+        for i in range(k)
+    ]
 
 def rerank(chunks, weights=(0.8,0.2), threshold=None):
-    # simulación de rerank
+    # quick simulation of rerank
     for c in chunks:
         c['combined_score'] = c['score']
     return chunks
@@ -22,9 +25,9 @@ def call_llm_stub(prompt):
     return "[LLM RESPONSE] Mocked response."
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Benchmark End-to-End RAG')
-    parser.add_argument('--queries', required=True, help='Archivo JSON con consultas')
-    parser.add_argument('--runs', type=int, default=1, help='Número de corridas por consulta')
+    parser = argparse.ArgumentParser(description='End-to-End RAG Benchmark')
+    parser.add_argument('--queries', required=True, help='JSON file with sample queries')
+    parser.add_argument('--runs', type=int, default=1, help='Number of runs per query')
     args = parser.parse_args()
 
     with open(args.queries) as f:
@@ -34,7 +37,7 @@ if __name__ == '__main__':
     for q in queries:
         for _ in range(args.runs):
             start = time.time()
-            chunks = retrieve(q['text'], q.get('k',5))
+            chunks = retrieve(q['text'], q.get('k', 5))
             chunks = rerank(chunks)
             prompt = construct_prompt(q['text'], chunks)
             _ = call_llm_stub(prompt)

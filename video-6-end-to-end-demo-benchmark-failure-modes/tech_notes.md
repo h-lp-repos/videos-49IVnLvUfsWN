@@ -1,8 +1,7 @@
-# Notas Técnicas y Troubleshooting Video 6
+# Technical Notes & Troubleshooting - Video 6
 
-## Errores comunes
+## Common Errors
 
-- **Timeout en llamadas LLM**: Ajustar tiempo de espera o usar stub.
-- **p95 influenciado por cold start**: Ejecutar warm-up antes de medir.
-- **benchmark_results.json no aparece**: Verificar permisos de escritura.
-
+- LLM call timeouts: adjust timeout or use stub.
+- p95 skewed by cold start: recommend a warm-up run before measurement.
+- `benchmark_results.json` missing: verify file permissions.
