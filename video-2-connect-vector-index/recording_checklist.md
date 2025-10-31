@@ -1,7 +1,6 @@
-# Checklist de Grabación Video 2
+# Recording Checklist - Video 2
 
-- [ ] Ver función retrieve(query, k) con fields source_id, chunk_id, score, text
-- [ ] Ejecutar `retrieve.py` y ver 5 resultados con dicts impresos
-- [ ] Comparar dimensión desde embeddings.get_dim() y la metadata del índice
-- [ ] Abrir archivo fuente de un chunk retornado para mostrar texto
-- [ ] Provocar error de índice faltante y mostrar mensaje amigable
+- [ ] Retrieval function signature and provenance fields visible
+- [ ] CLI shows top-K results with `source_id`, `chunk_id`, and score
+- [ ] Embedding dimension printed matches index metadata
+- [ ] Error handling output shown for missing index or malformed query

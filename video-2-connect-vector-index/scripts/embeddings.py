@@ -1,6 +1,7 @@
 """
-Helper para obtener dimensión de embeddings.
+Helper to retrieve embedding dimension.
 """
+
 def get_dim():
-    # Dimensión de embedding de ejemplo
+    # Example embedding dimension
     return 768

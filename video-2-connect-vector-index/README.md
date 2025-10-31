@@ -1,38 +1,40 @@
-# Video 2: Conexión al Índice de Vectores y Recuperación Top-K con Procedencia
+# Video 2: Connect to Vector Index & Retrieve Top-K Chunks with Provenance
 
-**Duración estimada:** 12 min
+**Estimated Duration:** 12 min
 
-**Objetivo:**
-Demostrar cómo usar el módulo de recuperación para consultar un índice FAISS y mostrar los top-K chunks con datos de procedencia (source_id, chunk_id, score).
+**Objective:**
+Demonstrate using the retrieval module to query an index, inspect the top-K chunks with provenance metadata (source_id, chunk_id, score), and verify embedding-dimension compatibility.
 
-## Requisitos previos
+## Prerequisites
 
-- Video 1 completado (índice cargado)
-- Entorno virtual activado con dependencias instaladas
+- Video 1 completed with a loaded index
+- Virtual environment activated with dependencies installed
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Abrir el módulo de recuperación y revisar la función `retrieve(query, k)` y sus campos de retorno.
-2. Ejecutar:
+1. Open the retrieval module code and review the `retrieve(query, k)` function signature; confirm it returns `source_id`, `chunk_id`, `score`, and `text`.
+2. Run:
    ```bash
    python scripts/retrieve.py --query "How to rotate a key?" --k 5
    ```
-3. Verificar la dimensión de embeddings vs índice:
+3. Verify embedding dimensions match the index:
    ```bash
    python -c "from embeddings import get_dim; print(get_dim())"
    ```
-4. Inspeccionar la procedencia de un chunk devuelto.
-5. Probar manejo de errores con query malformada o índice faltante.
+4. Inspect the provenance of a returned chunk (source_id and chunk_id).
+5. Demonstrate error handling by querying with a malformed query or missing index file.
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md`.
+- Empty results returned → ensure correct index path or reload the index.
+- Embedding-dimension mismatch → regenerate embeddings or use a matching index.
+- Missing provenance fields → verify ingestion process preserved provenance metadata.
 
-## Materiales incluidos
+## Materials
 
-- `scripts/`: Módulo y script de recuperación.
-- `sample_data/`: Chunked corpus de ejemplo y metadatos.
-- `notebooks/`: Notebook de demostración.
-- `verification_artifacts/`: Salida esperada.
-- `assets/`: Diagrama de flujo y capturas.
-
+- `scripts/`: `retrieve.py`, `retrieve_module.py`, and `embeddings.py`
+- `requirements.txt`
+- `notebooks/`: Demo notebook
+- `assets/`: Architecture diagram and terminal snapshot
+- `verification_artifacts/`: Expected CLI output
+- `sample_data/`: Chunked corpus data and metadata

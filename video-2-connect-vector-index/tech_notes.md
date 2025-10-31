@@ -1,8 +1,7 @@
-# Notas Técnicas y Troubleshooting Video 2
+# Technical Notes & Troubleshooting - Video 2
 
-## Errores comunes
+## Common Errors
 
-- **Lista vacía de resultados**: Asegurarse de que el índice existe y k <= tamaño del índice.
-- **Dimensión no coincide**: Revisar valor retornado por get_dim() y metadatos del índice.
-- **Falta campo source_id**: Chequear ingestión de chunks y mapping de procedencia.
-
+- **Empty results**: no chunks returned. Fix: confirm index path or reload the index.
+- **Dimension mismatch**: exception "Index dimension does not match vectors." Fix: regenerate embeddings or use a matching index.
+- **Missing provenance fields**: returned dict lacks metadata. Fix: ensure ingestion process preserved provenance mapping.
