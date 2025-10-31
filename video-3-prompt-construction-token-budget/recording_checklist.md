@@ -1,6 +1,7 @@
-# Checklist de Grabación Video 3
+# Recording Checklist - Video 3
 
-- [ ] Plantilla de prompt visible y placeholders revisados
-- [ ] Salida de "Total tokens" y desglose de truncado
-- [ ] Mensaje de truncado con nuevo K\n- [ ] Prompt final mostrado completo
-- [ ] Respuesta del stub del LLM impresa
+- [ ] Prompt template and placeholders reviewed
+- [ ] Output shows "Total tokens" and truncation message
+- [ ] Truncation message indicates new chunk count
+- [ ] Full prompt displayed after truncation
+- [ ] Stub LLM response printed

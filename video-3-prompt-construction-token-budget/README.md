@@ -1,38 +1,39 @@
-# Video 3: Construcción de Prompt y Control de Presupuesto de Tokens
+# Video 3: Prompt Construction & Token-Budget Enforcement
 
-**Duración estimada:** 15 min
+**Estimated Duration:** 15 min
 
-**Objetivo:**
-Ensamblar top-K chunks en un prompt con plantilla, medir tokens con tiktoken y aplicar estrategias de truncado para mantenerse dentro de un presupuesto.
+**Objective:**
+Assemble top-K retrieved chunks into a grounded prompt template, measure tokens with tiktoken (or the provided helper), and apply truncation/selection strategies to stay within a target token budget.
 
-## Requisitos previos
+## Prerequisites
 
-- Videos 1 y 2 completados
-- Dependencias instaladas (tiktoken)
+- Videos 1 and 2 completed
+- Dependencies installed (`tiktoken`)
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Abrir `templates/prompt_template.txt` y revisar placeholders (`{user_query}`, `{retrieved_chunks}`, `{provenance}`).
-2. Ejecutar contador de tokens:
+1. Open `templates/prompt_template.txt` and review placeholders (`{user_query}`, `{retrieved_chunks}`, `{provenance}`).
+2. Run the token counter:
    ```bash
    python scripts/count_prompt_tokens.py --query "X" --k 5 --budget 2048 --template templates/prompt_template.txt
    ```
-3. Observar salida de tokens totales y contribución por chunk.
-4. Demostrar truncado hasta cumplir presupuesto y mensaje "Truncated to K' chunks to meet budget".
-5. Enviar prompt al stub de LLM:
+3. Observe total tokens and per-chunk contribution.
+4. Demonstrate truncation strategy and print "Truncated to 3 chunks to meet budget 2048".
+5. Send the constructed prompt to the LLM stub:
    ```bash
-   python scripts/construct_and_call_stub.py --query "X" --k 5
+   python scripts/construct_and_call_stub.py --query "X" --k 5 --template templates/prompt_template.txt
    ```
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md`.
+- Inconsistent token counts: ensure using the same tokenizer as the target LLM.
+- Over-truncation: implement a provenance-only fallback when chunks are dropped.
+- Literal placeholders in output: confirm `.format()` keys match the template.
 
-## Materiales incluidos
+## Materials
 
-- `scripts/`: Módulo de construcción de prompt y scripts de conteo/envío.
-- `templates/`: Plantilla de prompt.
-- `notebooks/`: Notebook opcional de demostración.
-- `verification_artifacts/`: Salida esperada de conteo y truncado.
-- `assets/`: Diagramas y capturas.
-
+- `scripts/`: prompt constructor module and counting/calling scripts
+- `templates/`: prompt template
+- `notebooks/`: optional demo notebook
+- `assets/`: diagrams and screenshots
+- `verification_artifacts/`: expected token count, truncation, and stub output

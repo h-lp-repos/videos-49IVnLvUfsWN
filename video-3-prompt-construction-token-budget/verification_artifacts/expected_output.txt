@@ -17,4 +17,4 @@ doc2|2
 
 Please answer based on the above context.
 LLM Stub Response:
-[LLM-STUB RESPONSE] El resultado simulado del stub basado en el prompt.
+[LLM-STUB RESPONSE] Simulated stub result based on the prompt.
