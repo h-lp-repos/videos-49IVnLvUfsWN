@@ -1,5 +1,5 @@
 """
-Módulo de recuperación simulado para demo.
+Simulated retrieval module for demo purposes.
 """
 
 def retrieve(query, k):

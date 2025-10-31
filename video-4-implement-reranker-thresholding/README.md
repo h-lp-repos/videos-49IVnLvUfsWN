@@ -1,37 +1,39 @@
-# Video 4: Implementación de Relevance Reranker y Thresholding
+# Video 4: Implement Relevance Reranker & Thresholding
 
-**Duración estimada:** 12 min
+**Estimated Duration:** 12 min
 
-**Objetivo:**
-Implementar y demostrar un reranker de relevancia que reordena top-K por score combinado y aplica umbral configurable.
+**Objective:**
+Implement and demo a simple relevance reranker that reorders top-K chunks by a combined similarity + feature score, applies a configurable threshold to filter low-relevance chunks, and observe changes in the constructed prompt.
 
-## Requisitos previos
+## Prerequisites
 
-- Video 2 completado
-- Entorno con dependencias instaladas (`numpy`, `pandas`)
+- Video 2 completed
+- Environment with dependencies installed (`numpy`, `pandas`)
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Abrir `scripts/rerank_module.py` y revisar función `combine` y `rerank`.
-2. Ejecutar rerank en resultados simulados:
+1. Open `scripts/rerank_module.py` and review the `combine(score, feature, w_sim, w_feat)` and `rerank` functions.
+2. Run reranker on simulated retrieval results:
    ```bash
    python scripts/rerank.py --query "X" --k 10 --weights 0.8,0.2
    ```
-3. Aplicar umbral:
+3. Apply a threshold filter:
    ```bash
    python scripts/rerank.py --query "X" --k 10 --weights 0.8,0.2 --threshold 0.35
    ```
-4. Mostrar cómo el rerank se integra con prompt constructor.
-5. Experimentar con distinto threshold y observar cambios.
+4. Show integration with the prompt constructor and the effect on the final prompt.
+5. Experiment by toggling the threshold and observe differences in chunk order and prompt content.
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md`.
+- **NaN in combined_score**: sanitize inputs or use default values.
+- **Threshold filters out all chunks**: set a minimum floor or fallback to top-1 chunk.
+- **Schema mismatch with prompt constructor**: ensure correct keys in chunk dictionaries.
 
-## Materiales incluidos
+## Materials
 
-- `scripts/`: Módulo de reranking y script CLI.
-- `notebooks/`: Notebook de ejemplo.
-- `verification_artifacts/`: Salida esperada.
-- `assets/`: Capturas y gráficos.
-
+- `scripts/`: `rerank.py`, `rerank_module.py`, and `retrieve_module.py`
+- `requirements.txt`
+- `notebooks/`: Demo notebook
+- `assets/`: Screenshots and graphs
+- `verification_artifacts/`: Expected CLI output

@@ -1,6 +1,6 @@
-# Checklist de Grabación Video 4
+# Recording Checklist - Video 4
 
-- [ ] Función combine() y weights visibles
-- [ ] Salida de rerank con combined_score por item
-- [ ] Filtrado por threshold aplicado (--threshold)
-- [ ] Prompt constructor muestra efecto del reorder
+- [ ] combine() function and weight values visible
+- [ ] Rerank output shows `combined_score` per item
+- [ ] Threshold filtering applied with `--threshold`
+- [ ] Prompt constructor demo shows reordered chunks

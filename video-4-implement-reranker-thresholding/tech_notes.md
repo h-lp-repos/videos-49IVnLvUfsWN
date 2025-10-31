@@ -1,8 +1,7 @@
-# Notas Técnicas y Troubleshooting Video 4
+# Technical Notes & Troubleshooting - Video 4
 
-## Errores comunes
+## Common Errors
 
-- **NaN en combined_score**: Sanitizar entradas o usar valores por defecto.
-- **Threshold elimina todos**: Ajustar mínimo o fallback al top1.
-- **Schema mismatch con prompt constructor**: Asegurar claves correctas en dict de chunks.
-
+- **NaN in combined_score**: sanitize inputs or fallback to similarity score.
+- **Threshold removes all**: adjust threshold or fallback to at least one chunk.
+- **Schema mismatch**: verify chunk dict keys match prompt constructor expectations.
