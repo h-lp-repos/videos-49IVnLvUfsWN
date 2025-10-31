@@ -1,7 +1,7 @@
-# Checklist de Grabación Video 1
+# Recording Checklist - Video 1
 
-- [ ] Verificar que README del repo esté presente
-- [ ] Crear entorno virtual y pip install sin errores
-- [ ] Comprobar variable API_KEY o RAG_LLM_MODE
-- [ ] Mensaje "Loaded index with 5 vectors"
-- [ ] Salida del smoke test con 3 resultados
+- [ ] README present in the project root
+- [ ] Virtual environment created and `pip install` succeeds without errors
+- [ ] Environment variables (`API_KEY` or `RAG_LLM_MODE`) set and verified
+- [ ] "Loaded index with 5 vectors" message displayed
+- [ ] Quick retrieval smoke test output with 3 results

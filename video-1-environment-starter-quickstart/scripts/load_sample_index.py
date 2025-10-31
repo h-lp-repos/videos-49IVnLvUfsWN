@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 """
-Carga o genera un índice FAISS de ejemplo y muestra la cantidad de vectores.
+Load or generate a sample FAISS index and display the number of vectors loaded.
 """
 import os
 
 def load_index(index_path):
     os.makedirs(os.path.dirname(index_path), exist_ok=True)
     if not os.path.exists(index_path):
-        # Generación de índice FAISS de ejemplo (dummy)
+        # Generate a dummy FAISS sample index
         with open(index_path, 'w') as f:
             f.write('dummy faiss index')
-    # Simulamos que hay 5 vectores
+    # Simulate loading 5 vectors
     print(f"Loaded index with 5 vectors from {index_path}")
 
 if __name__ == '__main__':
     import argparse
-    parser = argparse.ArgumentParser(description='Carga índice FAISS de ejemplo')
-    parser.add_argument('--index-path', default='sample_data/faiss_sample.index', help='Ruta al índice FAISS')
+    parser = argparse.ArgumentParser(description='Load a sample FAISS index')
+    parser.add_argument(
+        '--index-path', default='sample_data/faiss_sample.index',
+        help='Path to the FAISS index file'
+    )
     args = parser.parse_args()
     load_index(args.index_path)

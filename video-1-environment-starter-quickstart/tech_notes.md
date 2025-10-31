@@ -1,8 +1,7 @@
-# Notas Técnicas y Troubleshooting
+# Technical Notes & Troubleshooting - Video 1
 
-## Errores comunes
+## Common Errors
 
-- **Dependencia faltante**: Error de pip install de faiss-cpu. Solución: usar faiss-cpu compatible con la plataforma.
-- **Variables de entorno no detectadas**: $API_KEY vacío. Solución: exportar y re-source el terminal.
-- **Mismatch de dimensiones**: Dimensión del índice no coincide. Solución: verificar chunk metadata o regenerar índice.
-
+- **Missing dependency**: pip install error for faiss-cpu. Fix: install the compatible `faiss-cpu` wheel.
+- **Environment variables not detected**: empty API key. Fix: export variables and re-source your shell.
+- **Index dimension mismatch**: "dimension mismatch" error. Fix: verify index metadata or regenerate the index with matching dimensions.

@@ -1,54 +1,56 @@
-# Video 1: Configuración de Entorno y Repositorio Starter
+# Video 1: Environment & Starter Repo Quickstart: Setup, Dependencies and Sample Index
 
-**Duración estimada:** 12 min
+**Estimated Duration:** 12 min
 
-**Objetivo:**
-Obtener un entorno local funcional y un repositorio de inicio que cargue un índice FAISS de ejemplo.
+**Objective:**
+Get a working local environment and starter repo running: install dependencies, configure API keys (or select sandbox), and load the sample FAISS index so a basic retrieval command returns results.
 
-## Requisitos previos
+## Prerequisites
 
-- Python >= 3.8
-- Git
-- Terminal de línea de comandos
-- Acceso al repositorio (clone URL)
+- Python 3.8+ and pip
+- git
+- Terminal access
+- Instructor‑provided starter repo and sample FAISS index (or sandbox LLM stub)
 
-## Pasos (checklist reproducible)
+## Steps (Reproducible Checklist)
 
-1. Clonar el repositorio y moverse al directorio principal:
+1. Clone the starter repo and verify you see the project README:
    ```bash
-   git clone <repo_url>
-   cd videos-49IVnLvUfsWN
+   git clone <starter-repo-url>
+   cd <repo-root>
+   ls
    ```
-2. Crear y activar un entorno virtual, luego instalar dependencias:
+2. Create a virtual environment and install requirements:
    ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
+   python -m venv .venv
+   source .venv/bin/activate   # On Windows: .venv\\Scripts\\activate
    pip install -r requirements.txt
    ```
-3. Configurar variables de entorno (API_KEY o modo sandbox):
+3. Set environment variables: API_KEY or sandbox mode:
    ```bash
-   export API_KEY=tu_api_key
-   # o bien:
+   export API_KEY=<your_api_key>
+   # or
    export RAG_LLM_MODE=sandbox
    ```
-4. Cargar el índice FAISS de ejemplo:
+4. Load the sample FAISS index:
    ```bash
-   python scripts/load_sample_index.py --index-path sample_data/faiss_sample.index
+   python scripts/load_sample_index.py
    ```
-5. Ejecutar prueba rápida de recuperación:
+5. Run a quick retrieval smoke test:
    ```bash
    python scripts/query_index.py --query "test" --k 3
    ```
 
-## Errores comunes y soluciones
+## Common Errors & Troubleshooting
 
-Consulte `tech_notes.md` para detalles de troubleshooting.
+- **Missing dependency** → pip install failure: try installing `faiss-cpu` or verify your Python environment.
+- **Environment variables not detected** → blank API key: export variables and re-source your shell.
+- **Index dimension mismatch** → verify index metadata or regenerate index with matching dimensions.
 
-## Materiales incluidos
+## Materials
 
-- `scripts/`: Scripts de carga y consulta de índice.
-- `sample_data/`: Chunked corpus y archivo de índice FAISS.
-- `notebooks/`: Notebook de ejemplo (opcional).
-- `verification_artifacts/`: Salida esperada de los scripts.
-- `assets/`: Imágenes y diagramas para la grabación.
-
+- `scripts/`: `load_sample_index.py` and `query_index.py`
+- `requirements.txt`
+- `notebooks/`: Example notebook for setup
+- `assets/`: Slides and terminal screenshots
+- `verification_artifacts/`: Expected CLI output
