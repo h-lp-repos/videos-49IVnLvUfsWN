@@ -1,28 +1,21 @@
 # Lesson 3: Implementing RAG (Retrieval-Augmented Generation) - Videos
 
-Este repositorio contiene el material completo y detallado para la grabación de los seis videos prácticos de la Clase 03: Implementación de RAG.
+This repository contains all of the materials for recording the six practical videos in Lesson 3: Implementing RAG.
 
-## Estructura
+## Structure
 
-Cada video está en su propia carpeta, numerada y con nombre en kebab-case:
+Each video lives in its own folder named in kebab-case:
 
-- `video-1-environment-starter-quickstart/`: Configuración inicial del entorno y repositorio starter.
-- `video-2-connect-vector-index/`: Conexión al índice de vectores y recuperación de chunks.
-- `video-3-prompt-construction-token-budget/`: Construcción de prompts y control de presupuesto de tokens.
-- `video-4-implement-reranker-thresholding/`: Implementación del reranker de relevancia y filtrado.
-- `video-5-caching-dedup-retrieval-optimization/`: Caching, deduplicación y optimizaciones de recuperación.
-- `video-6-end-to-end-demo-benchmark-failure-modes/`: Demo de extremo a extremo, micro-benchmarking y modos de falla.
+- `video-1-environment-starter-quickstart/`: Environment setup and starter repo quickstart.
+- `video-2-connect-vector-index/`: Connecting to a vector index and retrieving chunks with provenance.
+- `video-3-prompt-construction-token-budget/`: Prompt construction and token-budget enforcement.
+- `video-4-implement-reranker-thresholding/`: Relevance reranker implementation and thresholding.
+- `video-5-caching-dedup-retrieval-optimization/`: Caching, deduplication, and retrieval optimizations.
+- `video-6-end-to-end-demo-benchmark-failure-modes/`: End-to-end demo, micro‑benchmarking, and failure‑mode reproduction.
 
-## Archivos principales
+## Root Files
 
-- `README.md`: Este archivo de descripción general.
-- `.gitignore`: Archivos y carpetas a ignorar.
+- `README.md`: This overview file (translated to English).
+- `.gitignore`: Common patterns to ignore, updated for consistency.
 
-## Flujo sugerido de commits
-
-1. Commit inicial con la estructura base y archivos raíz.
-2. Commit por cada video con su contenido completo (README, scripts, datos, guión, checklist, notas, artifacts y assets).
-
----
-
-*Repositorio generado automáticamente siguiendo las especificaciones de la Clase 03.*
+*Follow the subfolders for each video-specific README, scripts, notebooks, assets, and verification artifacts.*

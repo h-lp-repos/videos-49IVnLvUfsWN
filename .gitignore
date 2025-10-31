@@ -2,19 +2,19 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
-*.env
-venv/
+.env
+.venv/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Sistema
+# System
 .DS_Store
 *.log
 
-# FAISS index y datos temporales generados
+# FAISS sample index and temp data
 *.index
 *.jsonl
 
-# Otros
+# Others
 tmp/
